@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+	<title>elPage</title>
+	<style>
+   *			{
+				margin:0;
+				padding:0;
+				box-sizing:border-box;
+			}
+:focus	{
+				outline:none;
+			}
+a
+			{
+				text-decoration: none;
+				font-weight: bold;
+				color: #fff9;
+			}
+
+a:visited
+			{
+				color: #fff3;
+			}
+a:hover , a:active
+			{
+				color: #fff6;
+			}
+
+body		{
+				height:100vh;
+				width:100vw;
+				position: absolute;
+				overflow-y:hidden;
+				overflow-x:hidden;
+				color:#fff;
+				background-color:#222;
+				background-image: linear-gradient(purple, red);
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				font-family: "Helvetica", sans-serif;
+				font-size:10px;
+				padding: auto;
+			}
+
+.lista	{
+				position: absolute;
+				display:block;
+				height: auto;
+				width: 4rem;
+				min-width: 3rem;
+				left: 1rem;
+				top: 4rem;
+				bottom: 1rem;
+				z-index:+3;
+				color: white;
+				background-color: #0000;
+				overflow: auto;
+				padding-bottom: 0.25rem;
+
+
+			}
+.lista li
+			{
+				background-color: #0003;
+				border-radius: 0.25rem;
+				padding: 0.25rem;
+				margin-top:	0.25rem;
+				text-align: center;
+			}
+.lista li:hover, .lnk:focus
+			{
+				background-color: #fff5;
+			}
+.lista li:active, .lnk:target
+			{
+				background-color: #0003;
+			}
+
+.moon
+ 			{
+				min-height:1.5rem;
+				min-width:1.5rem;
+				top: 1.5rem;
+				left: 2rem;
+				position: absolute;
+				border-radius:1.5rem;
+				color:#000;
+				background-color:#fff;
+				animation:Beat 3s ease infinite;
+			}
+.is
+			{
+				background-color: #0006;
+				height: auto;
+				width: auto;
+				min-width: 28ch;
+				border-radius: 1rem;
+				text-align: center;
+				padding: 1rem;
+				top: 4rem;
+				left: 6rem;
+				right: 1rem;
+				bottom: 2rem;
+				position: absolute;
+				overflow: hidden;
+
+			}
+.is h1
+			{
+				margin-top: 1.2rem;
+			}
+.is h2
+			{
+				margin-top: 0.9rem;
+			}
+.is h3
+			{
+				margin-top: 0.6rem;
+			}
+
+.is p		{
+				max-width: 36ch;
+				margin:0.3rem auto;
+			}
+
+@keyframes Beat
+			{
+	0%
+			{
+
+			}
+	50%
+			{
+				box-shadow:0 0 0.75rem #fff,0 0 1.5rem #fff,0 0 3rem #fff;
+			}
+	100%
+			{
+
+			}
+			}
+ 
+  </style>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+		  TableOfContents();
+		}
+		);                        
+		
+		
+		function TableOfContents(container, output) {
+		var toc = "";
+		var level = 0;
+		var container = document.querySelector(container) || document.querySelector('#contents');
+		var output = output || '#toc';
+		
+		container.innerHTML =
+		    container.innerHTML.replace(
+		        /<h([\d])>([^<]+)<\/h([\d])>/gi,
+		        function (str, openLevel, titleText, closeLevel) {
+		            if (openLevel != closeLevel) {
+		                return str;
+		            }
+		
+		            if (openLevel > level) {
+		                toc += (new Array(openLevel - level + 1)).join('<ul>');
+		            } else if (openLevel < level) {
+		                toc += (new Array(level - openLevel + 1)).join('</li></ul>');
+		            } else {
+		                toc += (new Array(level+ 1)).join('</li>');
+		            }
+		
+		            level = parseInt(openLevel);
+		
+		            var anchor = titleText.replace(/ /g, "-");
+		            toc += '<li><a href="#' + anchor + '">' + titleText
+		                + '</a>';
+		
+		            return '<h' + openLevel + '><a href="#' + anchor + '" id="' + anchor + '">'
+		                + titleText + '</a></h' + closeLevel + '>';
+		        }
+		    );
+		
+		if (level) {
+		    toc += (new Array(level + 1)).join('</ul>');
+		}
+		document.querySelector(output).innerHTML += toc;
+		};
+	</script>	
+
+</head>
+<body>
+	<div id="toc" class="lista">
+			<h3>Content</h3>
+	</div>
+
+	<a class="moon" href="#"></a>	
+
+
+	<div id="contents" class="is">
+		<h1>Intro</h1>
+		<p>
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h1>Chapter 1</h1>
+		<h2>1.1</h2>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h2>1.2</h2>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h3>1.2.1</h3>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h3>1.2.2</h3>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h3>1.2.3</h3>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h1>Chapter 2</h1>
+		<h2>2.1</h2>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h2>2.2</h2>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h3>2.2.1</h3>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h3>2.2.2</h3>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+		<h3>2.2.3</h3>
+		<p>
+	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+	Congue, mi sit vulputate leo ultricies dolor gravida.
+		</p>
+	</div>
+</body>
+</html>
