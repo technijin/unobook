@@ -34,7 +34,9 @@ body		{
 				height:100vh;
 				width:100vw;
 				position: absolute;
-				overflow-y:hidden;
+        display:flex;
+        flex-direction:row;
+				overflow-y:auto;
 				overflow-x:hidden;
 				color:#fff;
 				background-color:#222;
@@ -46,38 +48,39 @@ body		{
 				font-family: "Helvetica", sans-serif;
 				font-size:10px;
 				padding: auto;
+        padding-top:10vh;
 			}
 
 .lista	{
-				position: absolute;
-				display:block;
+
 				height: auto;
-				width: 4rem;
-				min-width: 3rem;
-				left: 1rem;
-				top: 4rem;
-				bottom: 1rem;
-				z-index:+3;
+				width: 10%;
+				padding: 2ch;
+				flex-grow: 1;
+        z-index:+3;
 				color: white;
-				background-color: #0000;
+				background-color: #0004;
 				overflow: auto;
 				padding-bottom: 0.25rem;
 				text-align:center;
-
+        justify-content:center;
 			}
-.lista li
+.li-title
+      {
+       }
+.lista a li
 			{
-				background-color: #0003;
+				background-color: #0000;
 				border-radius: 0.25rem;
 				padding: 0.25rem;
-				margin-top:	0.25rem;
+				margin-top:	1rem;
 				text-align: center;
 			}
-.lista li:hover, .lnk:focus
+.lista a li:hover, .lnk:focus
 			{
-				background-color: #fff5;
+				background-color: #fff1;
 			}
-.lista li:active, .lnk:target
+.lista a li:active, .lnk:target
 			{
 				background-color: #0003;
 			}
@@ -86,7 +89,7 @@ body		{
  			{
 				min-height:1.5rem;
 				min-width:1.5rem;
-				top: 1.5rem;
+				top: 1rem;
 				left: 2rem;
 				position: absolute;
 				border-radius:1.5rem;
@@ -98,18 +101,13 @@ body		{
 			{
 				background-color: #0006;
 				height: auto;
-				width: auto;
-				min-width: 28ch;
-				border-radius: 1rem;
+				width: 80%;
+        justify-content:center;
+        padding:1rem;
 				text-align: center;
-				padding: 1rem;
-				top: 4rem;
-				left: 6rem;
-				right: 1rem;
-				bottom: 2rem;
-				position: absolute;
-				overflow: hidden;
-
+        display:grid;
+				overflow-x: hidden;
+        flex-grow:4;
 			}
 .is h1
 			{
@@ -212,54 +210,54 @@ body		{
 		<h1>Chapter 1</h1>
 		<h2>1.1</h2>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 		<h2>1.2</h2>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 		<h3>1.2.1</h3>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 		<h3>1.2.2</h3>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 		<h3>1.2.3</h3>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 		<h1>Chapter 2</h1>
 		<h2>2.1</h2>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 		<h2>2.2</h2>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 		<h3>2.2.1</h3>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 		<h3>2.2.2</h3>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 		<h3>2.2.3</h3>
 		<p>
-	Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
-	Congue, mi sit vulputate leo ultricies dolor gravida.
+			Lorem ipsum dolor sit. Dapibus porta nisl viverra eu, nam. Senectus.
+			Congue, mi sit vulputate leo ultricies dolor gravida.
 		</p>
 	</div>
 </body>
